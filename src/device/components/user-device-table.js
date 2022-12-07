@@ -23,7 +23,7 @@ const columns = [
     {
         Header: 'Chart',
         accessor: 'id',
-        Cell: ({ row }) => (<Link to={`/mydevices/${row.id}/chart`}>See Chart</Link>)
+        Cell: ({ row }) => (<Link to={`/mydevices/${row.id}/chart/${row.average_consumption}`}>See Chart</Link>)
     }
 
 ];
