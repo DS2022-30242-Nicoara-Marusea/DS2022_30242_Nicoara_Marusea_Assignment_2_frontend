@@ -86,13 +86,13 @@ class App extends React.Component {
 
                         <Route
                             exact
-                            path='/mydevices/:id/chart'
+                            path='/mydevices/:id/chart/:e'
                             render={() => <ChartForm/>}
                         />
 
                         <Route
                             exact
-                            path='/mydevices/:id/chart/:date'
+                            path='/mydevices/:id/chart/:date/:e'
                             render={() => <ChartContainer/>}
                         />
 
