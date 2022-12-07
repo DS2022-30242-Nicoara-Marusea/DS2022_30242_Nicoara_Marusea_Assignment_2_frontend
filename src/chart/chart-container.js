@@ -32,8 +32,10 @@ class ChartContainer extends React.Component {
         this.params = new URLSearchParams(window.location.pathname);
         this.a = this.params.toString().substring(15, 51);
         console.log(this.a);
-        this.d = this.params.toString().substring(62, this.params.toString().length - 1);
+        this.d = this.params.toString().substring(62, 72);
         console.log(this.d);
+        this.e = this.params.toString().substring(75, this.params.toString().length - 1);
+        console.log("consouption: " + this.e);
 
         this.labels = [];
         this.dt = [];
@@ -69,6 +71,12 @@ class ChartContainer extends React.Component {
                 const el = result.map((index) => {
                     this.labels.push(index.timestamp.toString().substring(11, 16));
                     this.dt.push(index.energyConsumption);
+                    //alert("OVERDRAFT");
+                    if(this.e < index.energyConsumption) {
+                        //console.log("OVERDRAFT");
+                        alert("OVERDRAFT");
+                    }
+                    //console.log("OK");
 
                 })
             } else {
