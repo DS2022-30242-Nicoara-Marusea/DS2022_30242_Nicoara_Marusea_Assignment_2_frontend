@@ -32,6 +32,8 @@ class ChartForm extends React.Component {
         this.params = new URLSearchParams(window.location.pathname);
         this.a = this.params.toString().substring(15, 51);
         this.vrb = null;
+        this.e = this.params.toString().substring(62, this.params.toString().length - 1);
+        console.log("consouption: " + this.e);
         console.log(this.a);
 
         this.handleChange = this.handleChange.bind(this);
@@ -116,7 +118,7 @@ class ChartForm extends React.Component {
 
                 <Row>
                     <Col sm={{size: '4', offset: 8}}>
-                        <Link to={"/mydevices/" + this.a + "/chart/" + this.vrb}>See Chart</Link>
+                        <Link to={"/mydevices/" + this.a + "/chart/" + this.vrb + "/" + this.e}>See Chart</Link>
                     </Col>
                 </Row>
                 {
